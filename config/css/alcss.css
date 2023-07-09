@@ -1,0 +1,37 @@
+#body-wrap{
+background: linear-gradient(90deg,rgba(247,149,51,.1),rgba(243,112,85,.1) 15%,rgba(239,78,123,.1) 30%,rgba(161,102,171,.1) 44%,rgba(80,115,184,.1) 58%,rgba(16,152,173,.1) 72%,rgba(7,179,155,.1) 86%,rgba(109,186,130,.1)) !important;
+}
+#footer {
+-webkit-backdrop-filter: saturate(100%) blur(5px);
+backdrop-filter: saturate(100%) blur(5px);
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+color: #000
+}
+
+#footer,#footer:before {
+background: hsla(0,0%,100%,.15)
+}
+
+#footer #footer-wrap,#footer #footer-wrap a {
+color: #333;
+}
+#footer #footer-wrap{
+background: transparent!important;
+}
+
+:root {
+    --ichika-color: #49A6E9;
+}
+
+/* 公告&欢迎页 */
+.card-announcement {
+    line-height:30px;
+    font-size:16px;
+}
+
+.card-announcement .item-headline span{
+    margin-left:0!important;
+}
+
+
