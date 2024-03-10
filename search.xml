@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Cloudflare和gfw宣战，20%互联网被屏蔽</title>
+    <url>/posts/20231003/</url>
+    <content><![CDATA[<p>Cloudflare近期的全球部署加密技术——Encrypted Client Hello (ECH)，给互联网带来了巨大的变革。通过加密Server Name Indication (SNI)，用户在访问启用ECH的Cloudflare网站时，除了相关用户、Cloudflare和网站拥有者，无人能准确知晓用户访问的具体网站。</p>
+<p>Cloudflare 目前已经强制为所有免费计划的用户默认启用了ECH，且无法手动关闭。对于GFW来说，加密的SNI意味着，<strong>GFW将不再能够通过域名劫持来阻止大陆用户访问国际互联网</strong>，仅剩的手段是IP封禁和DNS污染。</p>
+<p>Cloudflare 所推行的ECH有着很强的特征，这意味着所有使用ECH的通信都很容易被识别，尽管GFW将不再能够通过SNI来识别用户的目标网站。这与此前并未得到推行的ESNI技术不同，留给GFW的选项并不多。</p>
+<p>要么阻断所有ECH流量（其效果将等同于<strong>封禁整个Cloudflare网络，这意味着所有使用Cloudflare的网站将会被全数封锁。</strong>然而，<strong>Cloudflare 服务了全球约 20% 的互联网流量，贸然封禁它带来的后果是不可估量的</strong>）；要么耗费大量资源，维护一个黑名单IP列表；要么<strong>对出境网络实施彻底的白名单制度</strong>。</p>
+<p>ECH的未来尚不明朗，但我们仍将<em><strong>拭目以待</strong></em>。</p>
+<hr>
+<ul>
+<li>目前部分CloudFlare网络已被屏蔽，包括但不限于：</li>
+<li>CloudFlare 洛杉矶节点</li>
+<li>CloudFlare 部分边缘网络</li>
+<li>CloudFlare CN</li>
+<li>CloudFlare Dash Src</li>
+<li>1.1.1.1</li>
+<li>部分地区的 warp+</li>
+<li>*.pages.dev</li>
+<li>*.workers.dev</li>
+</ul>
+<p>在关闭 GFW 和屏蔽 20% 互联网，中国政府选择了后者。</p>
+<p>api.mojang.com</p>
+<p><em>api.qq.com</em>(笑)</p>
+<p>api.openai.com</p>
+<p>awaish.link</p>
+<p>github.com等。</p>
+<p>此外，Dynadot、OneDrive、CloudFlare-cn.com、Minecraft、vercel等同样受到了影响。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/10/06/651f9d856ffc9.png" alt="alt ech"></p>
+]]></content>
+      <categories>
+        <category>Cloudflare</category>
+        <category>资讯速递</category>
+      </categories>
+      <tags>
+        <tag>Cloudflare</tag>
+        <tag>资讯速递</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL 入门指南</title>
+    <url>/posts/2023430a1/</url>
+    <content><![CDATA[<p>MySQL是一种关系型数据库管理系统，广泛应用于Web应用程序开发中。它是一种开源软件，具有高效的性能和可靠的稳定性，可以处理大量数据并提供可靠的数据存储和检索功能。本文将介绍MySQL的基础知识和入门技巧。</p>
+<ol>
+<li>安装MySQL</li>
+</ol>
+<p>在开始使用MySQL之前，首先需要安装MySQL。MySQL可以在多个平台上运行，包括Windows、Linux、Mac OS等。我们以Windows平台为例，介绍安装过程。</p>
+<p>首先，前往MySQL官网下载MySQL Community Server。下载完成后，运行安装程序，按照提示进行安装。在安装过程中，需要设置root用户的密码，这是MySQL默认的超级管理员账号。安装完成后，MySQL服务会自动启动。</p>
+<ol start="2">
+<li>连接MySQL</li>
+</ol>
+<p>在安装完成后，我们需要连接MySQL数据库。MySQL提供了多种连接方式，包括命令行、图形界面等。本文将介绍两种常用的连接方式：命令行和MySQL Workbench。</p>
+<p>命令行连接MySQL</p>
+<p>在Windows系统下，可以通过运行命令行工具（如cmd）连接MySQL。打开命令行工具后，输入以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<p>其中，-u参数指定用户名，-p参数表示需要输入密码。运行命令后，输入root用户的密码，即可连接到MySQL数据库。</p>
+<p>MySQL Workbench连接MySQL</p>
+<p>MySQL Workbench是一种图形化的MySQL数据库管理工具，提供了丰富的功能和工具，方便用户进行数据库管理和开发。在使用MySQL Workbench之前，需要先下载并安装MySQL Workbench。</p>
+<p>安装完成后，打开MySQL Workbench，点击“New Connection”按钮，输入MySQL服务器的IP地址、端口号、用户名和密码，即可连接到MySQL数据库。</p>
+<ol start="3">
+<li>创建数据库和表</li>
+</ol>
+<p>在连接到MySQL数据库后，我们可以开始创建数据库和表。MySQL使用SQL语言进行数据库管理和操作。下面是一些常用的SQL语句。</p>
+<p>创建数据库</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE mydb;</span><br></pre></td></tr></table></figure>
+
+<p>这条语句将创建一个名为“mydb”的数据库。</p>
+<p>选择数据库</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">USE mydb;</span><br></pre></td></tr></table></figure>
+
+<p>这条语句将选择名为“mydb”的数据库，后续的操作将在该数据库内进行。</p>
+<p>创建表</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> mytable (</span><br><span class="line">  id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">  name <span class="type">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">  age <span class="type">INT</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>这条语句将创建一个名为“mytable”的表，包含三个列：id、name和age。</p>
+<p>插入数据</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> mytable (id, name, age) <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">&#x27;Tom&#x27;</span>, <span class="number">20</span>);</span><br></pre></td></tr></table></figure>
+
+<p>这条语句将向“mytable”表中插入一条数据，包含id为1，name为Tom，age为20的记录。</p>
+<p>查询数据</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> mytable;</span><br></pre></td></tr></table></figure>
+
+<p>这条语句将查询“mytable”表中的所有记录。</p>
+<ol start="4">
+<li>使用MySQL的基本功能</li>
+</ol>
+<p>除了创建数据库和表，MySQL还提供了丰富的功能和工具，方便用户进行数据库管理和开发。下面是一些常用的功能和工具。</p>
+<p>数据类型</p>
+<p>MySQL支持多种数据类型，包括整数、浮点数、字符串、日期等。在创建表时，需要指定每个列的数据类型。</p>
+<p>索引</p>
+<p>索引是一种数据结构，用于快速查找数据库中的数据。在创建表时，可以为某些列创建索引，以提高查询性能。</p>
+<p>事务</p>
+<p>事务是一组数据库操作，要么全部执行，要么全部回滚。MySQL支持事务，可以在事务中执行多个操作，并保证事务的原子性、一致性、隔离性和持久性。</p>
+<p>备份和恢复</p>
+<p>备份和恢复是数据库管理中非常重要的功能。MySQL提供了多种备份和恢复方法，包括物理备份和逻辑备份，可以根据实际需求选择合适的备份和恢复方法。</p>
+<ol start="5">
+<li>常见问题解决</li>
+</ol>
+<p>在使用MySQL的过程中，可能会遇到一些常见问题，下面介绍一些解决方法。</p>
+<p>5.1. 密码忘记</p>
+<p>如果忘记了root用户的密码，可以通过以下步骤重置密码：</p>
+<ul>
+<li>停止MySQL服务；</li>
+<li>在MySQL的配置文件中添加一行“skip-grant-tables”；</li>
+<li>重新启动MySQL服务；</li>
+<li>使用以下命令登录MySQL：mysql -u root；</li>
+<li>使用以下命令修改密码：UPDATE mysql.user SET authentication_string=PASSWORD(‘new_password’) WHERE User=’root’;</li>
+<li>移除配置文件中的“skip-grant-tables”；</li>
+<li>重新启动MySQL服务。</li>
+</ul>
+<p>5.2. 端口占用</p>
+<p>如果MySQL连接失败，可能是端口被占用。可以通过以下步骤解决：</p>
+<ul>
+<li>使用命令行工具（如cmd）输入“netstat -ano”查看端口占用情况；</li>
+<li>找到占用端口的进程ID；</li>
+<li>使用命令行工具（如cmd）输入“taskkill /pid 进程ID /f”结束进程；</li>
+<li>重新启动MySQL服务。</li>
+</ul>
+<ol start="6">
+<li>总结</li>
+</ol>
+<p>MySQL是一种功能强大、性能高效的关系型数据库管理系统，广泛应用于Web应用程序开发中。在使用MySQL之前，需要安装MySQL并连接MySQL数据库。MySQL使用SQL语言进行数据库管理和操作，包括创建数据库和表、插入数据、查询数据等。除了基础功能外，MySQL还提供了丰富的功能和工具，包括数据类型、索引、事务、备份和恢复等。在使用MySQL时，可能会遇到一些常见问题，需要根据实际情况进行解决。希望本文能够帮助读者更好地了解MySQL，提高数据库管理和开发水平</p>
+]]></content>
+      <categories>
+        <category>Mysql</category>
+        <category>基础知识</category>
+      </categories>
+      <tags>
+        <tag>Mysql</tag>
+        <tag>基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vercel被墙，静态博客何去何从</title>
+    <url>/posts/231006/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>10月1日，大部分国外网站被墙或跳反诈，Vercel节点及官网被墙，部分地区会跳转反诈，不排除是gfw护网行动，大部分博客因此受到了影响，虽目前无dns污染，但不排除以后是否会采取这样的行动</p>
+<p>目前来说污染范围减少，但仍有部分地区无法访问</p>
+<p>截止到10月6日下午vercel情况(数据来源itdog</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/10/06/651f920af209a.jpg" alt="vercel官网及节点cname-china.vercel-dns.com" title="官网"></p>
+<h2 id="解决措施"><a href="#解决措施" class="headerlink" title="解决措施"></a>解决措施</h2><p>1.搬回国内空间，备案以免以后出现被墙</p>
+<p>2.搬到其他自托管平台，例如:</p>
+<p>对象存储，gitee/GitHub pages，zeabur，netlify，coding……</p>
+<p>3.套cdn(暂时解决被阻断问题)</p>
+<p>例如:</p>
+<p>初七云cdn(<a href="https://www.chuqiyun.com/">https://www.chuqiyun.com/</a> 海外加速无需备案，免费)</p>
+<p>无畏云加速(<a href="https://su.sctes.com/">https://su.sctes.com/</a> 需备案，每个月有免费额度30GB流量)</p>
+<p>又拍云，七牛云等</p>
+<p>这里以初七云CDN作为演示示例:</p>
+<p>打开初七云(<a href="https://www.chuqiyun.com/">https://www.chuqiyun.com/</a>)</p>
+<p>注册并实名，可以选择组A套餐或者组B套餐若已备案可选择全球加速</p>
+<p>开通后首先在证书列表添加证书<em>若无证书可参考下面平台:</em></p>
+<p><a href="https://www.joyssl.com/">Joyssl</a> (有免费通配符可申请不限量)</p>
+<p>腾讯云，阿里云都有免费额度</p>
+<p>Let’s Encrypt和ZeroSSL虽有效期仅有90天但可自动续</p>
+<p>添加证书后然后在网站列表中添加域名</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/10/06/651f94e109f35.jpg" alt="添加域名" title="控制台"></p>
+<p>域名(不要带协议头)可选择通配符(如*.example.com)源站IP可填cname-china.vercel-dns.com或76.76.21.21，监听端口填80端口即可，回源选择follow(协议跟随)websocket可选择性开启，若网站使用了即时通讯这样的需要打开</p>
+<p>添加完成后则显示cname，这就是需要解析的记录，登录云解析控制台解析到此记录即可</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/10/06/651f9764b9083.jpg" alt="cname"></p>
+<p>但这毕竟不是长远之计，期待后续的发展!</p>
+]]></content>
+      <categories>
+        <category>Vercel</category>
+      </categories>
+      <tags>
+        <tag>Vercel</tag>
+        <tag>博客</tag>
+        <tag>CDN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 Github Action 自动化部署 hexo</title>
+    <url>/posts/2023429a1/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前一段时间从hexo换到了WordPress，用了一年最后换回了hexo，用GitHub action折腾了一个hexo自动化部署，挺方便的</p>
+<h3 id="Github-Action"><a href="#Github-Action" class="headerlink" title="Github Action"></a>Github Action</h3><p>GItHub Actions是一个持续集成和持续交付的平台，能够让你自动化你的编译、测试和部署流程。</p>
+<p>GitHub 提供 Linux、Windows 和 macOS 虚拟机来运行您的工作流程，或者您可以在自己的数据中心或云基础架构中托管自己的自托管运行器</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>可以多域名多站点部署</li>
+<li>不会出现连接 github 连接不上的情况</li>
+<li>可以自动部署完成</li>
+<li>不再需要使用繁杂的命令</li>
+</ul>
+<h3 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h3><p>在这里分享一下我的工作流，平时写完文章以后，提交到仓库就会自动部署、更新<br>，工作流部署后可使用GitHub Pages，netlify，vercel，cloudflare pages等，实现多线路多域名</p>
+<h4 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h4><p>首先新建仓库A，用于一会儿hexo生成网页文件的存储仓库格式可以是 <code>xxx.github.io</code>，再新建仓库B(建议改为 <code>私有</code>)将博客源码上传至仓库<br>，找到Actions，点击”set up a workflow yourself “新建工作流<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://pan.alcex.top/d/WebDav/img/Screenshot_20230429_205838_com.microsoft.emmx_edit_61999468448351.jpg?sign=7vTAp1PRD9V78mcA2AUgenBw-8jGq4KU-iycVhTwcyE=:0" alt="action"><br>输入以下代码:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">自动部署</span></span><br><span class="line"><span class="comment"># 当有改动推送到main分支时启动Action</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">main</span></span><br><span class="line">      <span class="comment">#根据自己仓库的情况进行更改(源码在哪一分支就填哪个)</span></span><br><span class="line">  <span class="attr">release:</span></span><br><span class="line">    <span class="attr">types:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">published</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">检查分支</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">ref:</span> <span class="string">main</span></span><br><span class="line">          <span class="attr">fetch-depth:</span> <span class="number">0</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Sync</span> <span class="string">local</span> <span class="string">file</span> <span class="string">timestamps</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          git ls-files -z | while read -d &#x27;&#x27; path; do touch -d $(git log -1 --format=&quot;@%ct&quot; &quot;$path&quot;) &quot;$path&quot;; done</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">安装</span> <span class="string">Node</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v1</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="string">&quot;16.x&quot;</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">安装</span> <span class="string">Hexo</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          export TZ=&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line"><span class="string">          npm install hexo-cli -g</span></span><br><span class="line"><span class="string"></span>  </span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">缓存</span> <span class="string">Hexo</span></span><br><span class="line">        <span class="attr">id:</span> <span class="string">cache-npm</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/cache@v3</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">cache-name:</span> <span class="string">cache-node-modules</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">path:</span> <span class="string">node_modules</span></span><br><span class="line">          <span class="attr">key:</span> <span class="string">$&#123;&#123;</span> <span class="string">runner.os</span> <span class="string">&#125;&#125;-build-$&#123;&#123;</span> <span class="string">env.cache-name</span> <span class="string">&#125;&#125;-$&#123;&#123;</span> <span class="string">hashFiles(&#x27;**/package-lock.json&#x27;)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">restore-keys:</span> <span class="string">|</span></span><br><span class="line"><span class="string">            $&#123;&#123; runner.os &#125;&#125;-build-$&#123;&#123; env.cache-name &#125;&#125;-</span></span><br><span class="line"><span class="string">            $&#123;&#123; runner.os &#125;&#125;-build-</span></span><br><span class="line"><span class="string">            $&#123;&#123; runner.os &#125;&#125;-</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">安装依赖</span></span><br><span class="line">        <span class="attr">if:</span> <span class="string">$&#123;&#123;</span> <span class="string">steps.cache-npm.outputs.cache-hit</span> <span class="type">!=</span> <span class="string">&#x27;true&#x27;</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          npm install gulp-cli -g #全局安装gulp</span></span><br><span class="line"><span class="string">          npm install --save</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">生成静态文件</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          hexo clean</span></span><br><span class="line"><span class="string">          hexo generate</span></span><br><span class="line"><span class="string">          gulp</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">部署到Github</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          cd ./public</span></span><br><span class="line"><span class="string">          git init</span></span><br><span class="line"><span class="string">          git config --global user.name &quot;xxx&quot;</span></span><br><span class="line"><span class="string">          git config --global user.email &quot;xxx@xxx.com&quot;</span></span><br><span class="line"><span class="string">          git add .</span></span><br><span class="line"><span class="string">          git commit -m &#x27;$&#123;&#123; github.event.head_commit.message &#125;&#125;&#x27;</span></span><br><span class="line"><span class="string">          git push --force --all https://user:token@github.com/user/user.github.io</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<div class="note info flat"><p>注意!</p>
+</div>
+
+<ul>
+<li>注意!⚠️将 git config –global user.name “xxx”中的 xxx 替换为您的 GitHub 用户名(不是昵称)</li>
+<li>注意!⚠️将 git config –global user.email “<a href="mailto:&#120;&#120;&#120;&#64;&#120;&#120;&#120;&#46;&#99;&#x6f;&#109;">&#120;&#120;&#120;&#64;&#120;&#120;&#120;&#46;&#99;&#x6f;&#109;</a>“中的 <a href="mailto:&#x78;&#120;&#120;&#x40;&#120;&#x78;&#x78;&#x2e;&#x63;&#x6f;&#109;">&#x78;&#120;&#120;&#x40;&#120;&#x78;&#x78;&#x2e;&#x63;&#x6f;&#109;</a> 替换为您的 GitHub <code>主邮箱</code></li>
+<li>注意!⚠️ git push –force –all <a href="https://user:token@github.com/user/user.github.io">https://user:token@github.com/user/user.github.io</a> 中 第一个 user 替换为您的用户名，token 替换为您的 GitHub token 如没有请在 <code>设置</code>页面中创建。<br>再将 github.com 后的 <code>user</code>改为您的用户名，后面的 <code>user.github.io</code>改为您将要存储博客网页的仓库名。</li>
+</ul>
+<h3 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h3><h4 id="添加屏蔽项"><a href="#添加屏蔽项" class="headerlink" title="添加屏蔽项"></a>添加屏蔽项</h4><p>因为能够使用指令进行安装的内容不包括在需要提交的源码内，所有我们需要将这些内容添加到屏蔽项，表示不上传到 github 上。这样可以显著减少需要提交的文件量和加快提交速度。打开 <code>.gitignore</code>,(没有请创建)输入以下内容：</p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br><span class="line">.deploy_git*/</span><br><span class="line">.idea</span><br><span class="line">themes/butterfly/.git</span><br></pre></td></tr></table></figure>
+
+<p>最后一行要改成实际.git 的位置，因为我是 butterfly 主题，不同主题文件夹名字各不相同！<br>如果不是butterfly主题，记得替换最后一行内容为你自己当前使用的主题。</p>
+<h4 id="查看部署情况"><a href="#查看部署情况" class="headerlink" title="查看部署情况"></a>查看部署情况</h4><p>打开 Github 存放源码的私有仓库，找到 action<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://pan.alcex.top/d/WebDav/img/07_edit_63885251194938.png?sign=4XjVRPA6CAKnkEptA1AgrPXV5WaqbQeQUhF0Mbc9Ssw=:0" alt="02"><br>根据刚刚的 Commit 记录找到相应的部署日志，点击 Deploy 查看部署情况<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://pan.alcex.top/d/WebDav/img/09_edit_63916524348058.png?sign=pw0QRkIq_Tw5icSAv28W1Oh_P9w1QxN9npU4zpVA9dE=:0" alt="03"><br>若全部打钩，恭喜你，你现在可以享受自动部署了</p>
+<div class="note info flat"><p>诶嘿，有什么问题可随时留言！</p>
+</div>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>Github Action</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用mail.ru创建免费企业邮箱</title>
+    <url>/posts/57914/</url>
+    <content><![CDATA[<p>Mail.Ru是俄罗斯最流行的电子邮件网站，你可以用它创建免费的企业邮箱</p>
+<span id="more"></span>
+
+<p>国内的企业邮箱大部分都要收费，或者有发件限制等，昨天网上冲浪时无意间发现了一个俄罗斯免费邮箱网站: <a href="https://mail.ru/">https://mail.ru</a><br></p>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>Mail ru是俄罗斯最大的邮箱服务商，类似国内的网易163邮箱，因为默认显示俄语，创建此邮箱请使用google或Edge浏览器，以备网页翻译用，你懂的<br><br>一个域名：任意一个域名都行；<br>可以访问mail.ru的环境<br><br>如果你完成了这一步，恭喜你，已经节省了50%的时间</p>
+<h3 id="创建账号"><a href="#创建账号" class="headerlink" title="创建账号"></a>创建账号</h3><p>1.先创建个人 mail ru邮箱账号。<br><a href="https://account.mail.ru/signup">https://account.mail.ru/signup</a>?<br><a data-fancybox="gallery" href="https://static.alcex.top/Genshin/1035118_origin_v2-8cbf6f0f548d9d1866c88a2096f4df6a_1440w_edit_31117831200459.jpg"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://static.alcex.top/Genshin/1035118_origin_v2-8cbf6f0f548d9d1866c88a2096f4df6a_1440w_edit_31117831200459.jpg"></a><br>如果你有VK，可以直接关联账号</p>
+<h3 id="创建域名邮箱"><a href="#创建域名邮箱" class="headerlink" title="创建域名邮箱"></a>创建域名邮箱</h3><p>mail.ru域名邮箱支持5000用户，无限邮箱空间，支持IMAP、POP、STMP。<br>1.打开 <a href="https://biz.mail.ru/">https://biz.mail.ru/</a><br>点击连接，输入你的域名<br><a data-fancybox="gallery" href="https://static.alcex.top/Genshin/1035125_origin_Screenshot_20230119_134156_com.microsoft.emmx_edit_31580357437888.jpg"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://static.alcex.top/Genshin/1035125_origin_Screenshot_20230119_134156_com.microsoft.emmx_edit_31580357437888.jpg"></a></p>
+<p><a data-fancybox="gallery" href="https://static.alcex.top/Genshin/1035126_origin_Screenshot_20230119_134004_com.microsoft.emmx_edit_31602435884760.jpg"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://static.alcex.top/Genshin/1035126_origin_Screenshot_20230119_134004_com.microsoft.emmx_edit_31602435884760.jpg"></a></p>
+<h3 id="域名验证"><a href="#域名验证" class="headerlink" title="域名验证"></a>域名验证</h3><p>创建项目后，会自动重定向到域名验证页面，按照要求进行验证，<br>推荐TXT方式验证，比较方便快捷。<br>下载网站提供的一个html文件，然后上传到Web服务器根目录；<br>在你网站首页的html文件里添加META标签前面加上提供的代码；<br>在域名解析添加一条提供的TXT的记录；<br>修改NS域名服务器，按照对方提供的DNS地址添加就好。<br><a data-fancybox="gallery" href="https://static.alcex.top/Genshin/1035128_origin_Screenshot_20230119_134307_com.microsoft.emmx_edit_31906542372214.jpg"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://static.alcex.top/Genshin/1035128_origin_Screenshot_20230119_134307_com.microsoft.emmx_edit_31906542372214.jpg"></a><br>添加记录后可能会有延迟，完成后点击确认，等待验证<br>完成后会自动重定向至此页面<br><a data-fancybox="gallery" href="https://static.alcex.top/Genshin/1035130_origin_Screenshot_20230119_135313.jpg"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://static.alcex.top/Genshin/1035130_origin_Screenshot_20230119_135313.jpg"></a></p>
+<h3 id="添加MX记录"><a href="#添加MX记录" class="headerlink" title="添加MX记录"></a>添加MX记录</h3><p>添加一条MX记录，加好后直接验证就好。<br>类型：TXT<br>解析名：@<br>值：emx.mail.ru</p>
+<h3 id="添加SPF"><a href="#添加SPF" class="headerlink" title="添加SPF"></a>添加SPF</h3><p>SPF：添加一个值为</p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">v=spf1 redirect=_spf.mail.ru</span><br></pre></td></tr></table></figure>
+<p>的TXT记录就可以了。</p>
+<h3 id="添加DKIM"><a href="#添加DKIM" class="headerlink" title="添加DKIM"></a>添加DKIM</h3><p>添加一个名为mailru._domainkey值为对方网站提供的TXT记录<br><a data-fancybox="gallery" href="https://static.alcex.top/Genshin/1035131_origin_Screenshot_20230119_135306_com.microsoft.emmx_edit_32443814197132.jpg"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://static.alcex.top/Genshin/1035131_origin_Screenshot_20230119_135306_com.microsoft.emmx_edit_32443814197132.jpg"></a><br>[warning]注意! 在mail.ru页面复制文本时不要开翻译[/warning]（踩过的坑）<br>然后你的企业邮箱就创建好了 </p>
+<h3 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h3><p><a data-fancybox="gallery" href="https://www.chhui.cn/content/top15img/202207//b675d72de53d7e6ca9b8ad0cf429bbcf.jpg"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://www.chhui.cn/content/top15img/202207//b675d72de53d7e6ca9b8ad0cf429bbcf.jpg"></a><br>添加用户后就可以登录新建的用户了</p>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>首次使用mail.ru 新邮件账户需要登录一次设置姓名。<br><a href="https://biz.mail.ru/login/%E4%BD%A0%E7%9A%84%E5%9F%9F%E5%90%8D">https://biz.mail.ru/login/你的域名</a><br>登录后可以在这里设置语言为英语，起码英语还认识几个</p>
+<h3 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h3><h4 id="在其他邮箱软件中添加企业邮箱账号"><a href="#在其他邮箱软件中添加企业邮箱账号" class="headerlink" title="在其他邮箱软件中添加企业邮箱账号"></a>在其他邮箱软件中添加企业邮箱账号</h4><p>前往biz.mail.ru<br>右上角管理账号页面→密码和安全性→安全→登录方法→外部应用程序的密码→通过ICQ和邮件应用程序登录帐户的密码<br><a data-fancybox="gallery" href="https://static.alcex.top/Genshin/1035135_origin_Screenshot_20230119_140602_com.microsoft.emmx_edit_33001039419442.jpg"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://static.alcex.top/Genshin/1035135_origin_Screenshot_20230119_140602_com.microsoft.emmx_edit_33001039419442.jpg"></a><br>添加名称，如果没有绑定手机号请绑定手机号，以防账号丢失<br><a data-fancybox="gallery" href="https://static.alcex.top/Genshin/1035140_origin_Screenshot_20230119_140850_com.huawei.hitouch_edit_33118924193383.jpg"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://static.alcex.top/Genshin/1035140_origin_Screenshot_20230119_140850_com.huawei.hitouch_edit_33118924193383.jpg"></a><br>然后你就可以看见授权码了，请截图保存，以备用<br>前往邮箱软件→添加邮箱→填写你的域名邮箱账号→会报错这时我们要更改服务器设置<br>更改为：<br>IMAP imap.mail.ru 993 SSL / TLS<br>POP3 pop.mail.ru 995 SSL / TLS<br>STMP smtp.mail.ru 465  SSL / TLS<br>然后密码填写你刚刚申请的授权码，不要填你账号密码（踩过的坑）<br>这样你就可以使用软件处理邮件了  </p>
+<h4 id="IMAP，POP，SMTP设置"><a href="#IMAP，POP，SMTP设置" class="headerlink" title="IMAP，POP，SMTP设置"></a>IMAP，POP，SMTP设置</h4><p>地址 端口 加密<br>IMAP imap.mail.ru 993 SSL / TLS<br>POP3 pop.mail.ru 995 SSL / TLS<br>STMP smtp.mail.ru 465  SSL / TLS</p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>到这里mail.ru的免费企业域名邮箱申请配置就算完成了，总体来说服务效果还是不错的。使用的话用Foxmail、网易邮箱，花瓣邮箱这样的客户端还是很方便的<br>有什么问题可以留言 </p>
+]]></content>
+      <categories>
+        <category>mail.ru</category>
+      </categories>
+      <tags>
+        <tag>mail.ru</tag>
+        <tag>邮箱</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开源模型互相抄袭，胡言乱语的 AI 有什么意义？</title>
+    <url>/posts/gemini/</url>
+    <content><![CDATA[<h3 id="谷歌大模型Gemini涉”套壳”文心一言？"><a href="#谷歌大模型Gemini涉”套壳”文心一言？" class="headerlink" title="谷歌大模型Gemini涉”套壳”文心一言？"></a>谷歌大模型Gemini涉”套壳”文心一言？</h3><p>谷歌（Google）的 AI 大模型 Gemini 又闹笑话了！前有宣传视频作假被打脸，最近又有网友发现 Gemini 有“套壳”百度的大模型“文心一言”的嫌疑？</p>
+<p>今天，我在开发应用时，偶然发现，谷歌 Gemini 大模型竟然自爆是”文心一言”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2024/01/26/65b3c3e0ce410.png" alt="1706279902355.png"></p>
+<p>很戏剧性的一幕发生了，Gemini竟然一直在强调自己是百度开发的文心一言，这让我百思不得其解，于是我便去了解了一下，原来Gemini曾“借”用百度训练数据作为数据集</p>
+<p>更有网友钓鱼执法到了最“诚实”的 Gemini：<strong>“没错，我说过我是文心一言，这是因为我在接受训练时使用了文心一言的数据呀！”</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2024/01/26/65b3c7dd8df60.png" alt="1706280922303.png"></p>
+<p>还有的 Gemini“跳槽”到了微软，摇身一变成为“微软小冰”：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2024/01/26/65b3c82161b74.png" alt="1706280990339.png"></p>
+<h4 id="泪目，这下谷歌真成外国版百度了"><a href="#泪目，这下谷歌真成外国版百度了" class="headerlink" title="泪目，这下谷歌真成外国版百度了"></a>泪目，这下谷歌真成外国版百度了</h4><h3 id="开源模型互相抄袭，胡言乱语的-AI-有什么意义？"><a href="#开源模型互相抄袭，胡言乱语的-AI-有什么意义？" class="headerlink" title="开源模型互相抄袭，胡言乱语的 AI 有什么意义？"></a>开源模型互相抄袭，胡言乱语的 AI 有什么意义？</h3><p>此次 Gemini 自曝使用百度文心一言训练，不是行业内第一次出现 各家 AI 大模型互相抄袭的现象了：此前谷歌和百度就都被曝出过用利用 OpenAI 的数据进行训练；前两天字节也被曝出一直在使用 ChatGPT 生成的数据训练自己的 AI“豆包”——然后就因为违反了 OpenAI 的服务条款，被封禁了账户。事后字节跳动回应称：早在四月份就将相关数据从训练数据集中删除。至于到底删没删，“弯道抄车”合理不合理，就只能智者见智了。</p>
+<p>其实，“使用 AI 生成的数训练 AI”造成的问题是很严重的，尤其是对各家开源模型：在上网搜集数据的时候，很难辨别是否是由 AI 生成的；<strong>随着大模型接受的由 AI 生成的虚假信息越来越多，那么它就会变得脱离现实、谎话连篇。</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2024/01/26/65b3c70edee2d.png" alt="1706280716069.png"></p>
+<h4 id="AI-的数据危机到来了？"><a href="#AI-的数据危机到来了？" class="headerlink" title="AI 的数据危机到来了？"></a>AI 的数据危机到来了？</h4><p>开源大模型（Llama 套壳）们的纷纷翻车，和各领域AI 的崛起，都能证明一点：<strong>语料，是除算力外另一会对 AI 发展产生重要影响的因素。</strong></p>
+<p>马斯克的 AI 大模型 Grok 是唯一一个能够实时访问 X（前 Twitter 平台），而 X 可以说是最好的突发新闻来源，因此，在实时新闻这一块，Grok 可以说很有优势。</p>
+<p>而 OpenAI 显然也很清楚语料的重要性：近日，他们宣布将与德国媒体巨头 Axel Springer 合作，将新闻与 AI 进行更深层次的整合；ChatGPT 的全球用户都将能够收到来自 Axel Springer 旗下媒体的内容，且来自 Axel Springer 的语料将用于推进 OpenAI 的大模型训练</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2024/01/26/65b3c788633ce.png" alt="1706280837790.png"></p>
+<p>此前，更是有多家研究机构和学者认为：最早在明年，人类可能会陷入训练数据荒，各大 AI 的训练很快就会耗尽全世界的语料。因此，想要自家 AI 快速发展，获取高质量的独家语料是必经之路。而想要获取这样的语料，成本无疑是十分高昂的；想来这也是为什么各家纷纷选择“抄袭”其他大模型，获取合成数据以节约成本吧。你觉得用 AI 生成的数据反哺 AI 这一行为可行吗？</p>
+]]></content>
+      <categories>
+        <category>AI</category>
+        <category>Gemini</category>
+        <category>ChatGPT</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>Gemini</tag>
+        <tag>谷歌</tag>
+        <tag>ChatGPT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>绕过 replit 检测部署 alist</title>
+    <url>/posts/205/</url>
+    <content><![CDATA[<div class="note success simple"><p>已失效 2.24/1/1</p>
+</div>
+
+<h4 id="前言-最近一段时间replit-开始对-alist-进行限制，包括代码文件名称都会进行检测，不过无法部署-图一-，以前部署的也无法使用-图二"><a href="#前言-最近一段时间replit-开始对-alist-进行限制，包括代码文件名称都会进行检测，不过无法部署-图一-，以前部署的也无法使用-图二" class="headerlink" title="前言 最近一段时间replit 开始对 alist 进行限制，包括代码文件名称都会进行检测，不过无法部署(图一)，以前部署的也无法使用(图二)"></a>前言 最近一段时间replit 开始对 alist 进行限制，包括代码文件名称都会进行检测，不过无法部署(图一)，以前部署的也无法使用(图二)</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://cdn2.chuqis.com/gh/alcexn/static@main/images/1690561121327ZvsEp.jpeg" alt="图一"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://cdn2.chuqis.com/gh/alcexn/static@main/images/1690561121341rkc12.jpeg" alt="图二"></p>
+<h4 id="解决办法-新"><a href="#解决办法-新" class="headerlink" title="解决办法(新)"></a>解决办法(新)</h4><p>前往<a href="https://github.com/alist-org/alist/releases" title="alist Releases">alist Releases</a>下载包</p>
+<blockquote>
+<p>选择alist-linux-amd64.tar.gz 即可<br>并重命名 例:xxx.tar.gz</p>
+</blockquote>
+<p>然后在文件管理器中，解压文件，并将解压后的文件名改为replit或其他<br>返回replit创建bash repl，将文件上传到repl，并将main.sh替换为以下代码:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> Hello World</span><br><span class="line">URL=<span class="variable">$&#123;REPL_SLUG&#125;</span>.<span class="variable">$&#123;REPL_OWNER&#125;</span>.repl.co</span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span> curl -s <span class="string">&quot;https://<span class="variable">$URL</span>&quot;</span> &gt;/dev/null 2&gt;&amp;1 &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;<span class="subst">$(date +&#x27;%Y%m%d%H%M%S&#x27;)</span> Keeping online ...&quot;</span> &amp;&amp; <span class="built_in">sleep</span> 300; <span class="keyword">done</span> &amp;</span><br><span class="line"><span class="built_in">chmod</span> +x ./replit</span><br><span class="line"><span class="built_in">nohup</span> ./replit server</span><br></pre></td></tr></table></figure>
+
+<h2 id="保存文件，点击’Run’即可"><a href="#保存文件，点击’Run’即可" class="headerlink" title="保存文件，点击’Run’即可"></a>保存文件，点击’Run’即可</h2><h4 id="解决办法-旧"><a href="#解决办法-旧" class="headerlink" title="解决办法(旧)"></a>解决办法(旧)</h4><div class="note warning simple"><p>以下教程更新于2023/2/18/，不保证以下教程的100%可用性</p>
+</div>
+<p>前往<a href="https://github.com/alist-org/alist/releases" title="alist Releases">alist Releases</a>下载包</p>
+<blockquote>
+<p>选择alist-linux-amd64.tar.gz 即可<br>并重命名 例:xxx.tar.gz</p>
+</blockquote>
+<p>返回 replit 新建 repl 并选择Blank Repl<br>上传文件(建议根目录)，并执行 <code> tar -zxvf xxx.tar.gz</code>等待显示 alist 后，删除.replit 文件中删除所有代码并在.replit 文件中写入 <code>run = &quot;./alist server&quot;</code><br>点击绿色按钮 run 即可<br>第一次运行会生成配置文件，默认数据库为本地，输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./alist admin</span><br></pre></td></tr></table></figure>
+
+<p>获取账号密码登录后即可使用</p>
+<h4 id="更改数据库"><a href="#更改数据库" class="headerlink" title="更改数据库"></a>更改数据库</h4><p>为防止本地数据库数据丢失或者隐私数据的泄露，我们可以使用MySQL/ Postgres数据库：<br><a href="https://db4free.net/">https://db4free.net/</a><br><a href="https://remotemysql.com/">https://remotemysql.com/</a><br><a href="https://www.freesqldatabase.com/">https://www.freesqldatabase.com/</a><br><a href="https://planetscale.com/">https://planetscale.com/</a><br><del><a href="https://bit.io/">https://bit.io/</a></del>(已跑路)<br><a href="https://www.elephantsql.com/">https://www.elephantsql.com/</a><br><a href="https://scalingo.com/">https://scalingo.com/</a><br><a href="http://cloud.yugabyte.com/">http://cloud.yugabyte.com/</a><br>个人建议 db4free 数据库<br>这里拿 db4free 作为演示<br>首先在目录找到 data/config.json 打开，修改为以下内容<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://cdn2.chuqis.com/gh/alcexn/static@main/images/1690561121358No49A.jpeg"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://cdn2.chuqis.com/gh/alcexn/static@main/images/16905611213792pEgY.jpeg"><br>最后运行即可，密码会重新生成可在 log 查看或者去数据库后台查看</p>
+<h4 id="项目定时激活-可选"><a href="#项目定时激活-可选" class="headerlink" title="项目定时激活(可选)"></a>项目定时激活(可选)</h4><p>若是新教程部署的alist则不用监控定时激活!<br>旧教程部署的alist可使用uptime Kuma或uptimebot，来定时监控repl使服务能够正常使用</p>
+]]></content>
+      <categories>
+        <category>alist</category>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>alsit</tag>
+        <tag>replit</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>鸿蒙4.0发布</title>
+    <url>/posts/hmos4.0/</url>
+    <content><![CDATA[<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/08/08/ico4hasgm8RbAGU.webp" alt="鸿蒙4.0"></p>
+<p>就在昨天（8 月 6 日），华为宣布开启鸿蒙 HarmonyOS 4.0 开发者 Beta 版第二批招募，这意味着陆续将有更多的华为设备升级支持 HarmonyOS 4.0 了</p>
+<p>鸿蒙4.0系统加入了AI语言大模型，以及华为方舟引擎。华为方舟引擎在图形、多媒体、内存、调度、存储、低功耗等多项能力上都有显著提升。除了提升应用的打开速度外，应用切换更顺滑</p>
+<h3 id="新的升级"><a href="#新的升级" class="headerlink" title="新的升级"></a>新的升级</h3><h4 id="灵动岛？！"><a href="#灵动岛？！" class="headerlink" title="灵动岛？！?"></a>灵动岛？！?</h4><p>鸿蒙4.0不仅优化了通知中心还给应用通知分出优先级</p>
+<p>例如重要外卖通知、聊天信息会优先显示，保证用户不会错过。新增实况窗可在手机左上角实时停驻，实时更新状态。比如点外卖时出餐、取餐、送达信息在手机左上角可以一直展示，类似于vivo的灵动岛，目前适配应用较少，希望以后能够有更多的应用能够适配</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/08/08/q2hoD1dvpPeyJzU.webp"></p>
+<h4 id="个性化及超级中转站"><a href="#个性化及超级中转站" class="headerlink" title="个性化及超级中转站"></a>个性化及超级中转站</h4><p>超级中转站:用户只需双指按压屏幕就能选取内容拖入中转站，在需要时可以拖入到聊天对话框，或者笔记软件中</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/08/08/Exw2IUCib1solQ5.jpg"></p>
+<p>个性化:比如全景天气壁纸，海报字体，人像一键抠图形成壁纸。鸿蒙4.0有专属表情，既丰富又立体。华为将表情进行本土适配，还有一个趣味心情功能，允许用户根据每天的心情，组成一个心情链，设为系统壁纸和主题</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/08/08/2sFvj4SI6ZlYyNf.webp"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/08/08/LXwAWfK7YJ8sOTQ.webp"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/08/08/gFSDKzyOikJeNjR.webp"></p>
+<h4 id="AI模型？O-o"><a href="#AI模型？O-o" class="headerlink" title="AI模型？O.o"></a>AI模型？O.o</h4><p>华为首次在智能语音上接入ai模型，使智能交互更加方便快捷智能，鸿蒙4.0主要增强了智慧助手的交互、效率和个性化服务。现在手机助手小艺能接受文字、图片、文档等多种形式的输入。比如可以直接给小艺发一张图片，让小艺识别图像中的文字。能够与手机功能进行联动，识别后要求小艺按照图片里的时间添加会议提醒，或者将图片里的联系人信息直接添加到手机通讯录中。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/08/08/ZAC8kvtrflV4xHu.webp"></p>
+<p>小艺还可以直接帮用户创建专属场景，类似苹果的快捷指令，但比苹果更简单，华为的可以用自然语言进行创建，没有复杂的学习过程，只需要说话就行。</p>
+<h4 id="支持机型"><a href="#支持机型" class="headerlink" title="支持机型"></a>支持机型</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/08/08/5x3wlb16M24gois.jpg"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://ichika.cc/img/Page/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/08/08/em8OIs4ijtVyDGp.jpg"></p>
+<p>麒麟985以下的机型目前还没有确定具体时间具体机型可以升级，但是据可靠消息透露，明年会陆续支持更多的机型!</p>
+<h3 id="轻舟已过万重山"><a href="#轻舟已过万重山" class="headerlink" title="轻舟已过万重山!"></a>轻舟已过万重山!</h3><p>综合来看，在全新的鸿蒙4.0中，以往系统中存在的许多问题已经解决，包括卡顿、主题过气，手机助手不够智能，自由度不高等问题全都重新改进。而华为方舟引擎的加入让整个鸿蒙系统变得更加个性化，提升整体使用流畅性的同时也给用户带来更持久的续航体验</p>
+]]></content>
+      <categories>
+        <category>鸿蒙</category>
+      </categories>
+      <tags>
+        <tag>鸿蒙</tag>
+        <tag>发布会</tag>
+      </tags>
+  </entry>
+</search>

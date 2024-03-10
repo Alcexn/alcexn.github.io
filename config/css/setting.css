@@ -1,0 +1,193 @@
+/*使用了Chrome105新特性has，兼容性不好qwq*/
+.con-rightside{
+    height:50px!important;
+    width: 50px!important;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    margin:10px;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+}
+.con-rightside:hover{
+    background-color: rgba(129, 129, 129, 0.568);
+}
+.con-rightside i::before{
+    font-size:30px;
+}
+[data-theme="dark"] .con-rightside i::before{
+    color:white
+}
+.con-rightside:hover{
+    background-color: rgba(129, 129, 129, 0.568);
+}
+@media screen and (max-width:600px){
+    .con-rightside i::before{
+        font-size: 16px;
+    }
+    .con-rightside{
+        height:20px!important;
+        width:20px!important;
+    }
+}
+@media screen and (max-width:768px){
+    #con-barrage{
+        display: none!important;
+    }   
+}
+#setting-buttons{
+    display: flex;
+    flex-wrap: wrap;
+}
+.setting-title{
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+}
+#setting-sides{
+    margin-left: auto;
+}
+#setting-sides{
+    white-space: nowrap;
+}
+#setting-sidesl{
+    display: flex;
+}
+.settings .content{
+    margin-left:20px;
+}
+.settings{
+    margin:15px
+}
+/* 开关 */
+.settings input[type="checkbox"] {
+    width: 38px;
+    height: 20px;
+    position: relative;
+    border: 1px solid #000000;
+    background-color: #0000;
+    border-radius: 12px;
+    background-clip: content-box;
+    display: inline-block;
+    -webkit-appearance: none;
+    user-select: none;
+    outline: none;
+transform: translateY(5px);}
+[data-theme="dark"] .settings input[type="checkbox"] {
+    border: 1px solid white;
+}
+.settings input[type="checkbox"]:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    border-radius: 10px;
+    background-color: #000;}
+[data-theme="dark"] .settings input[type="checkbox"]:before{
+    background-color: white;
+}
+.settings input[type="checkbox"]:checked {
+    background-color: var(--lyx-theme);border-color:var(--lyx-theme)}
+.settings input[type="checkbox"]:checked:before {
+    left: 19px;background-color: white!important;}
+
+.settings input[type="checkbox"] {
+    transition: border background-color box-shadow }
+.settings input[type="checkbox"]:before {
+    transition: left 0.2s;}
+.settings input[type="checkbox"]:checked {
+    background-color: var(--lyx-theme);
+    /* transition: border ease 0.4s, background-color ease 1.2s; */
+}.settings input[type="checkbox"]:checked:before {
+    transition: left 0.2s;}
+.settings input[type="checkbox"]:checked:hover{
+    opacity: 0.8;
+}
+.settings input[type="checkbox"]:active{
+    background-color: #666666!important;
+    border-color:#666666!important;
+}
+.settings input[type="checkbox"]:active::before{
+    background-color:white!important;
+}
+.settings{
+    overflow: scroll;
+    width: 100%;
+}
+#settingWindow{
+    position: fixed;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    left: 50%;
+    top: 50%;
+    max-height: 80%;
+    background-color: #ffffffdd;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border: 1px solid var(--lyx-border);
+    padding:30px;
+    backdrop-filter: blur(10px);
+    -ms-transform-origin-y:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+    z-index: 514;
+    display: none;
+}
+.settings{
+    overflow: scroll;
+    width: 100%;
+}
+#settingWindow{
+    display: none;
+    flex-direction: column;
+}
+.settingx{
+    width: 46%;
+    text-align: left;
+    font-size: 28px;
+    padding: 10px;
+    margin: 10px;
+    background-color: var(--lyx-light-grey);
+    opacity: 0.8;
+    border-radius: 10px;
+}
+.settingx:hover{
+    background-color: var(--lyx-gray);
+}
+.settingx i{
+    margin: 5px;
+}
+@media screen and (max-width:768px){
+    .settingx{
+        width:100%!important;
+    }
+}
+.setting-title{
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+}
+#close-console{
+    text-align: right;
+}
+#stt,#close-console{
+    margin-left: auto;
+}
+#close-console:not(#close-console:hover){
+    color: var(--global-font-color);
+}
+
+
