@@ -1,0 +1,1 @@
+window.onload=function(){new Vue({created(){this.$notify({title:"欢迎访问!",message:"",position:"top-right",offset:50,showClose:!0,type:"success",duration:5e3})}}).$mount("#app")};
